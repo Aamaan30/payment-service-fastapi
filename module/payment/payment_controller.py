@@ -10,7 +10,7 @@ from common.gateway.circuit_breaker import gateway_circuit_breaker
 
 routers = APIRouter(prefix="/payments")
 
-@routers.post("/", response_model=PaymentResponse, status_code=status.HTTP_202_ACCEPTED, dependencies=[Depends(get_api_client), Depends(rate_limit_check)])
+@routers.post("/create", response_model=PaymentResponse, status_code=status.HTTP_202_ACCEPTED, dependencies=[Depends(get_api_client), Depends(rate_limit_check)])
 async def create_payment(
     data: PaymentCreateRequest,
     payment_service: PaymentService = Depends()
