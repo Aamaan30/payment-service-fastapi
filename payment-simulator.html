@@ -1000,7 +1000,7 @@
                         payer_name: "Test User",
                         description: "Premium Subscription"
                     };
-                    const res = await fetch(`${API_BASE_URL}/payments/`, {
+                    const res = await fetch(`${API_BASE_URL}/payments/create`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
